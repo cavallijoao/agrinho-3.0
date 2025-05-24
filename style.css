@@ -1,10 +1,10 @@
-* {
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos globais */
+/* Corpo da página */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+/* Cabeçalho */
 header {
     background-color: #388e3c;
     color: white;
@@ -19,28 +20,42 @@ header {
     padding: 40px 0;
 }
 
-header h1 {
-    font-size: 2.5em;
+header .logo h1 {
+    font-size: 3em;
 }
 
-header p {
+header nav ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
     font-size: 1.2em;
-    margin-top: 10px;
 }
 
 /* Seções principais */
 main {
-    max-width: 1000px;
-    margin: 30px auto;
     padding: 20px;
+    max-width: 1000px;
+    margin: auto;
 }
 
-.introducao h2, .impactos h2, .conclusao h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
     color: #388e3c;
-    border-bottom: 2px solid #388e3c;
-    padding-bottom: 10px;
+}
+
+.impactos, .solucoes, .ajuda, .contato {
+    margin-bottom: 40px;
 }
 
 .impacto-item {
@@ -57,27 +72,61 @@ main {
     border-radius: 8px;
 }
 
-.descricao {
-    flex: 1;
+.solucao {
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
 }
 
-.descricao h3 {
+.solucao h3 {
     font-size: 1.8em;
     color: #388e3c;
-    margin-bottom: 10px;
 }
 
-.descricao p {
-    font-size: 1.1em;
-    color: #555;
-}
-
-/* Conclusão */
-.conclusao p {
-    font-size: 1.2em;
-    color: #444;
+.contato form {
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
-    line-height: 1.8;
+}
+
+.contato label {
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.contato input, .contato textarea {
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contato button {
+    background-color: #388e3c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.contato button:hover {
+    background-color: #2e7d32;
+}
+
+/* Imagens responsivas */
+.imagem {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.imagem-intro {
+    border-radius: 8px;
 }
 
 /* Rodapé */
@@ -89,12 +138,21 @@ footer {
     margin-top: 30px;
 }
 
-footer p {
-    font-size: 1em;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
+    header .logo h1 {
+        font-size: 2em;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
     .impacto-item {
         flex-direction: column;
         align-items: center;
@@ -102,6 +160,15 @@ footer p {
 
     .impacto-item img {
         width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .solucoes-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .solucao {
         margin-bottom: 20px;
     }
 }
